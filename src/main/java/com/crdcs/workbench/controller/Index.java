@@ -14,14 +14,6 @@ import javax.servlet.http.HttpSession;
 public class Index {
     @RequestMapping(value = { "/**/*.htm", "/**/*.html","/" })
     public String index(HttpServletRequest request, HttpServletResponse response){
-
-        HttpSession session = request.getSession();
-
-        Cookie[] cookies = request.getCookies();
-
-        response.addCookie(cookies[0]);
-
-
         return "index";
     }
 }
