@@ -1,30 +1,27 @@
-# y
+# crdcs
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
+## Project setup
+```
 npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### 本地开发运行命令
+```
+npm run serve
+```
+
+### 多环境下 服务器测试环境运行命令
+```
+npm run dev-build
+```
+
+### 多环境下 服务器预生产环境运行命令
+```
+npm run uat-build
+```
+
+### 多环境下 服务器生产环境运行命令
+```
+npm run pro-build
+```
+
