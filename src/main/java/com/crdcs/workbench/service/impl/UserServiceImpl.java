@@ -1,10 +1,12 @@
 package com.crdcs.workbench.service.impl;
 
+import com.crdcs.workbench.dao.UserDAO;
 import com.crdcs.workbench.model.Page;
 import com.crdcs.workbench.model.po.User;
 import com.crdcs.workbench.model.vo.UserParam;
 import com.crdcs.workbench.model.vo.UserQueryCondition;
 import com.crdcs.workbench.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,11 +19,13 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
+    @Autowired
+    private UserDAO userDAO;
 
 
     @Override
     public User validateuser(String email, String password) {
-        return null;
+        return userDAO.validateuser(email,password);
     }
 
     @Override

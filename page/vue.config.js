@@ -13,7 +13,7 @@ module.exports = {
   // 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录。
   assetsDir: 'static',
   devServer: {
-    port: 8090, // 端口号
+    port: 8081, // 端口号
     host: 'localhost',
     https: false, // https:{type:Boolean}
     open: true, // 配置自动启动浏览器

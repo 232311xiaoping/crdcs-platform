@@ -2,6 +2,10 @@ package com.crdcs.workbench.dao;
 
 import com.crdcs.workbench.model.po.User;
 import com.crdcs.workbench.model.vo.UserQueryCondition;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.springframework.test.context.jdbc.Sql;
 
 import java.util.List;
 
@@ -11,6 +15,7 @@ import java.util.List;
  * @author zxm
  * @since 2019-11-27 15:08
  */
+@Mapper
 public interface UserDAO {
 
     /**
@@ -20,7 +25,8 @@ public interface UserDAO {
      * @param password
      * @return
      */
-    User validateuser(String email, String password);
+    @Select("SELECT * FROM user WHERE email = #{email} AND password = #{password}")
+    User validateuser(@Param("email") String email, @Param("password") String password);
 
     /**
      *

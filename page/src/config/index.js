@@ -1,7 +1,7 @@
-const localBaseUrl = 'http://localhost:19090/'
-const devBaseUrl = 'http://192.168.31.5:18090/'
-const uatBaseUrl = 'http://192.168.31.5:18091/'
-const prodBaseUrl = 'http://192.168.31.6:18092/'
+const localBaseUrl = 'http://localhost:8080/'
+const devBaseUrl = 'http://121.40.241.121:8080/'
+const uatBaseUrl = 'http://121.40.241.121:8080/'
+const prodBaseUrl = 'http://121.40.241.121:8080/'
 
 let baseUrl = ''
 const env = process.env.NODE_ENV

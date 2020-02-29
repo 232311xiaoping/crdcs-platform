@@ -11,13 +11,8 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletOutputStream;
@@ -35,7 +30,7 @@ import java.util.Map;
  * @Description 用户管理类
  * @since 2019/11/27
  **/
-@Controller
+@RestController
 public class UserController {
     
     @Autowired
@@ -180,6 +175,7 @@ public class UserController {
             return Result.build(0,"邮箱账号不能为空");
         }
         User user = userService.validateuser(login.getEmail(), login.getPassword());
+//        User user = new User();
         if(user == null){
             return Result.build(0,"用户名或者密码不正确");
         }else if(user.getRemoved() != 0){
