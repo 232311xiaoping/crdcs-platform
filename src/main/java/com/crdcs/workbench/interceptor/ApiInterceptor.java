@@ -1,12 +1,11 @@
 package com.crdcs.workbench.interceptor;
 
-
-import org.springframework.web.method.HandlerMethod;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+@Slf4j
 public class ApiInterceptor extends HandlerInterceptorAdapter {
     /**
      * This implementation always returns {@code true}.
@@ -29,6 +28,7 @@ public class ApiInterceptor extends HandlerInterceptorAdapter {
         boolean b = response.containsHeader("Access-Control-Allow-Headers");
         String header = response.getHeader("Access-Control-Allow-Headers");
         response.addHeader("Access-Control-Allow-Headers","*");
+        log.info("path info,{}",request.getPathInfo());
         return true;
     }
 
